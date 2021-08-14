@@ -7,5 +7,5 @@
   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
   http://www.liquibase.org/xml/ns/pro
   http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd">
-    <include  file="db/changelog/baselis-changelog.xml"/>
+    <include  file="db/changelog/baseline-changelog.xml"/>
 </databaseChangeLog>
