@@ -44,6 +44,6 @@ public class DataInitializer implements CommandLineRunner {
         authorUuid.setFirstName("Joe");
         authorUuid.setLastName("Buck");
         AuthorUuid savedAuthor = authorUuidRepository.save(authorUuid);
-        System.out.printf("Saved Author UUID: " + savedAuthor.getId() );
+        System.out.println("Saved Author UUID: " + savedAuthor.getId() );
     }
 }
