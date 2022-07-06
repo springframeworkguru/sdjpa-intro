@@ -1,6 +1,5 @@
 package guru.springframework.sdjpaintro.domain.composite;
 
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable

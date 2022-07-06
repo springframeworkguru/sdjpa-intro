@@ -2,7 +2,7 @@ package guru.springframework.sdjpaintro.domain;
 
 import org.hibernate.annotations.Type;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.UUID;
 
 /**
