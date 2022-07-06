@@ -1,6 +1,5 @@
 package guru.springframework.sdjpaintro.domain.composite;
 
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 public class NameId implements Serializable {
