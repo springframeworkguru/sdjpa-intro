@@ -1,8 +1,8 @@
 package guru.springframework.sdjpaintro.domain.composite;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 /**
  * Created by jt on 8/18/21.
