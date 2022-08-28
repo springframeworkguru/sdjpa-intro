@@ -1,24 +1,22 @@
 package guru.springframework.sdjpaintro.domain;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
-import jakarta.persistence.*;
 import java.util.UUID;
 
-/**
- * Created by jt on 8/15/21.
- */
 @Entity
 public class BookUuid {
     @Id
     @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2") //This is how to specify UUID RFC 4122 Primary Key
     @Column(columnDefinition = "BINARY(16)", updatable = false, nullable = false)
     private UUID id;
 
     private String title;
     private String isbn;
     private String publisher;
+    private Long authorId;
 
     public UUID getId() {
         return id;
@@ -52,4 +50,11 @@ public class BookUuid {
         this.publisher = publisher;
     }
 
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
+    }
 }

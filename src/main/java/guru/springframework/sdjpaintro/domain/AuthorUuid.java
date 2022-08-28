@@ -1,19 +1,16 @@
 package guru.springframework.sdjpaintro.domain;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.Type;
 
-import jakarta.persistence.*;
 import java.util.UUID;
 
-/**
- * Created by jt on 8/15/21.
- */
 @Entity
 public class AuthorUuid {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Type(type = "org.hibernate.type.UUIDCharType")
-    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false )
+    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
     private UUID id;
 
     private String firstName;
@@ -42,5 +39,6 @@ public class AuthorUuid {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
 
 }
