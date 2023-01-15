@@ -9,5 +9,4 @@ public class SdjpaIntroApplication {
     public static void main(String[] args) {
         SpringApplication.run(SdjpaIntroApplication.class, args);
     }
-
 }
