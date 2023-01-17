@@ -16,12 +16,8 @@
     <properties>
         <java.version>17</java.version>
     </properties>
+
     <dependencies>
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>javax.persistence</artifactId>
-            <version>2.2.1</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -48,6 +44,18 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>h2</id>
+            <dependencies>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <plugin>
@@ -66,11 +74,12 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.4.2</version>
             </plugin>
-
+            <!-- *********** Liquibase ********** -->
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>4.10.0</version>
+
                 <configuration>
                     <url>jdbc:mysql://127.0.0.1:3306/bookdb?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</url>
                     <username>bookadmin</username>
@@ -79,6 +88,7 @@
                     <changeSetAuthor>jcm</changeSetAuthor>
                     <changelogSchemaName>bookdb</changelogSchemaName>
                 </configuration>
+
                 <dependencies>
                     <dependency>
                         <groupId>mysql</groupId>
@@ -87,6 +97,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <!-- *********** Liquibase ********** -->
         </plugins>
     </build>
 
@@ -100,6 +111,7 @@
             </snapshots>
         </repository>
     </repositories>
+
     <pluginRepositories>
         <pluginRepository>
             <id>spring-milestones</id>
@@ -110,5 +122,4 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-
 </project>
