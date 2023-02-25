@@ -8,5 +8,9 @@
             <column name="first_name" type="VARCHAR(255)"/>
             <column name="last_name" type="VARCHAR(255)"/>
         </createTable>
+        <createTable tableName="author_seq">
+            <column name="next_val" type="BIGINT"/>
+        </createTable>
+        <sql>insert into author_seq values (0)</sql>
     </changeSet>
 </databaseChangeLog>
